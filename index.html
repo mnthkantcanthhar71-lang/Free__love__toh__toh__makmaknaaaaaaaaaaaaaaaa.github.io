@@ -1,54 +1,31 @@
-import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>freelovetoh | ลอยกระทงออนไลน์กับแฟน 💞</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="intro">
+    <h1>ที่รักคะ 💖 มาลอยกระทงกันเถอะ</h1>
+    <img src="https://mthai.com/loykrathong/images/items/2025/krathong-1.png" class="krathong" />
+    <form id="wishForm">
+      <input type="text" id="yourName" placeholder="ชื่อของคุณ" required>
+      <input type="text" id="loverName" placeholder="ชื่อแฟนของคุณ" required>
+      <input type="text" id="wishText" placeholder="คำอธิษฐานของคุณ" required>
+      <button type="submit">🌕 ลอยกระทง 🌊</button>
+    </form>
+  </div>
 
-export default function LoyKrathongApp() {
-  const [page, setPage] = useState("home");
+  <div id="riverScene" class="hidden">
+    <audio id="bgMusic" autoplay loop>
+      <source src="https://www.youtube.com/watch?v=95s3Y8nVMV4" type="audio/mp3">
+    </audio>
+    <img id="background" src="https://png.pngtree.com/thumb_back/fh260/background/20250831/pngtree-loy-krathong-festival-in-thailand-with-traditional-lanterns-and-candle-lights-image_18692648.webp" alt="background">
+    <div id="krathongArea"></div>
+  </div>
 
-  const bgImage =
-    "https://png.pngtree.com/thumb_back/fh260/background/20250831/pngtree-loy-krathong-festival-in-thailand-with-traditional-lanterns-and-candle-lights-image_18692648.webp";
-
-  return (
-    <div
-      className="min-h-screen bg-cover bg-center flex items-center justify-center"
-      style={{ backgroundImage: `url(${bgImage})` }}
-    >
-      <AnimatePresence mode="wait">
-        {page === "home" ? (
-          <motion.div
-            key="home"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="text-center text-white"
-          >
-            <h1 className="text-5xl font-bold mb-6 drop-shadow-lg">
-              🌕 เทศกาลลอยกระทง 🌕
-            </h1>
-            <motion.button
-              onClick={() => setPage("second")}
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
-              className="px-8 py-4 bg-yellow-400 text-black font-bold rounded-full shadow-lg"
-            >
-              ลอยกระทง
-            </motion.button>
-          </motion.div>
-        ) : (
-          <motion.div
-            key="second"
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-center text-white"
-          >
-            <h1 className="text-5xl font-bold mb-6 drop-shadow-lg">
-              🪷 สุขสันต์วันลอยกระทง 🪷
-            </h1>
-            <p className="text-xl">ขอให้สิ่งไม่ดีลอยไปกับกระทงนะครับ ✨</p>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </div>
-  );
-}
+  <script type="module" src="script.js"></script>
+</body>
+</html>
