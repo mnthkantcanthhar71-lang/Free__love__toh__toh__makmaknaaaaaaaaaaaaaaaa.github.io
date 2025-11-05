@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>💞freelovetoh | ลอยกระทงออนไลน์กับแฟน 💞</title>
+  <title>💞freelovetoh | มาลอยกระทงออนไลน์กับแฟน 💞</title>
   <style>
     body {
       margin: 0;
@@ -17,9 +17,9 @@
     .background {
       position: fixed;
       inset: 0;
-      background: url("https://png.pngtree.com/thumb_back/fh260/background/20250831/pngtree-loy-krathong-festival-in-thailand-with-traditional-lanterns-and-candle-lights-image_18692648.webp")
+      background: url("https://cms.dmpcdn.com/travel/2022/11/03/89d4df40-5b64-11ed-94ef-1f12ff16dc69_webp_original.jpg")
         no-repeat center/cover;
-      animation: floatBg 40s linear infinite;
+      animation: floatBg 60s linear infinite;
       z-index: -2;
     }
 
@@ -33,11 +33,11 @@
       position: absolute;
       bottom: 0;
       width: 100%;
-      height: 180px;
+      height: 100px;
       background: rgba(0, 0, 50, 0.6);
       backdrop-filter: blur(3px);
-      box-shadow: inset 0 0 40px rgba(255, 255, 255, 0.1);
-      animation: shimmer 6s ease-in-out infinite;
+      box-shadow: inset 0 0 255px rgba(255, 255, 255, 0.1);
+      animation: shimmer 10s ease-in-out infinite;
     }
 
     @keyframes shimmer {
@@ -143,7 +143,7 @@
     <input type="text" id="yourName" placeholder="ชื่อของคุณ" />
     <input type="text" id="loverName" placeholder="ชื่อแฟนของคุณ 💞" />
     <input type="text" id="wish" placeholder="คำอธิษฐาน 1 ข้อ 🕯️" /><br />
-    <button onclick="floatKrathong()">ลอยกระทง 🌕</button>
+    <button onclick="floatKrathong()">🌕ลอยกระทง🌕</button>
   </div>
 
   <div class="river"></div>
@@ -169,7 +169,7 @@
       // ข้อความอวยพร
       const text = document.createElement("div");
       text.className = "wish-text";
-      text.innerHTML = `<b>${yourName} 💞 ${loverName}</b><br>${wish || "ขอให้ความรักลอยไปกับสายน้ำแห่งความสุข 🌊"}`;
+      text.innerHTML = `<b>${yourName} 💞 ${loverName}</b><br>${wish || "ขอให้ความทุกข์เศร้าลอยไปกับสายน้ำแห่งความสุข 🌊"}`;
       document.body.appendChild(text);
 
       // โคมลอยหลายดวง
