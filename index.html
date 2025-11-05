@@ -3,27 +3,49 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>freelovetoh | ฟรีลอยกระทงออนไลน์กับแฟน 💞</title>
+  <title>freelovetoh | ลอยกระทงออนไลน์กับแฟน 💞</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- หน้าหลัก -->
-  <div id="page1" class="page active">
-    <h1 class="title">💞 freelovetoh | ฟรีลอยกระทงออนไลน์กับแฟน 💞</h1>
-    <div class="preview">
-      <img src="https://mthai.com/loykrathong/images/items/2025/krathong-1.png" alt="กระทงตัวอย่าง" class="krathong-preview">
+  <audio autoplay loop>
+    <source src="https://www.youtube.com/embed/95s3Y8nVMV4?autoplay=1&loop=1" type="audio/mpeg">
+  </audio>
+
+  <div class="container">
+    <h1>ที่รักคะ เรามาลอยกระทงกันเถอะ 🪷</h1>
+    <div class="form-box">
+      <input type="text" id="myName" placeholder="ชื่อของคุณ">
+      <input type="text" id="loverName" placeholder="ชื่อแฟนของคุณ">
+      <textarea id="wish" placeholder="ขอพร 1 ข้อ..."></textarea>
+      <button id="launchBtn">💞 ลอยกระทง 💞</button>
     </div>
-    <button id="floatButton" class="btn-float">กดลอยกระทง</button>
   </div>
 
-  <!-- หน้าลอยกระทง -->
-  <div id="page2" class="page">
-    <div class="river">
-      <img src="https://mthai.com/loykrathong/images/items/2025/krathong-1.png" class="krathong-floating" alt="กระทงกำลังลอย">
-    </div>
-    <p class="message">🌙 ขอให้ความรักของเราลอยไปกับแสงเทียนคืนนี้ 💫</p>
+  <div class="river" id="river">
+    <img id="krathong" src="https://mthai.com/loykrathong/images/items/2025/krathong-1.png" class="krathong hidden">
   </div>
 
-  <script src="script.js"></script>
+  <script type="module" src="script.js"></script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ลอยกระทงออนไลน์</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="home">
+  <div class="container">
+    <h1>🌕 ลอยกระทงออนไลน์ Romantic Flow 🌊</h1>
+    <p>ร่วมลอยกระทงไปพร้อมกับคนอื่นได้แบบเรียลไทม์</p>
+
+    <div class="sample-area">
+      <img src="https://cdn-icons-png.flaticon.com/512/7432/7432216.png" class="sample-float" alt="กระทงตัวอย่าง">
+    </div>
+
+    <button onclick="window.location.href='float.html'">เริ่มลอยกระทงของฉัน 🌼</button>
+  </div>
 </body>
 </html>
