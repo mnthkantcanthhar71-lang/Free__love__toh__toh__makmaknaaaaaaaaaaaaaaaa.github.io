@@ -1,6 +1,38 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>freelovetoh | ลอยกระทงออนไลน์กับแฟน 💞</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="intro">
+    <h1>ที่รักคะ 💖 มาลอยกระทงกันเถอะ</h1>
+    <img src="https://mthai.com/loykrathong/images/items/2025/krathong-1.png" class="krathong" />
+    <form id="wishForm">
+      <input type="text" id="yourName" placeholder="ชื่อของคุณ" required>
+      <input type="text" id="loverName" placeholder="ชื่อแฟนของคุณ" required>
+      <input type="text" id="wishText" placeholder="คำอธิษฐานของคุณ" required>
+      <button type="submit">🌕 ลอยกระทง 🌊</button>
+    </form>
+  </div>
+
+  <div id="riverScene" class="hidden">
+    <audio id="bgMusic" autoplay loop>
+      <source src="https://www.youtube.com/watch?v=95s3Y8nVMV4" type="audio/mp3">
+    </audio>
+    <img id="background" src="https://png.pngtree.com/thumb_back/fh260/background/20250831/pngtree-loy-krathong-festival-in-thailand-with-traditional-lanterns-and-candle-lights-image_18692648.webp" alt="background">
+    <div id="krathongArea"></div>
+  </div>
+
+  <script type="module" src="script.js"></script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="th">
+<head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>freelovetoh | ฟรีลอยกระทงออนไลน์กับแฟน 💞</title>
