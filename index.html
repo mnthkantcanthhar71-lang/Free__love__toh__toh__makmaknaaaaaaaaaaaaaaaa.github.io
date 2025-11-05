@@ -1,187 +1,29 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>💞freelovetoh | มาลอยกระทงออนไลน์กับแฟน 💞</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: "Prompt", sans-serif;
-      overflow: hidden;
-      background-color: #000;
-      color: white;
-    }
-
-    /* พื้นหลังแม่น้ำ */
-    .background {
-      position: fixed;
-      inset: 0;
-      background: url("https://cms.dmpcdn.com/travel/2022/11/03/89d4df40-5b64-11ed-94ef-1f12ff16dc69_webp_original.jpg")
-        no-repeat center/cover;
-      animation: floatBg 60s linear infinite;
-      z-index: -2;
-    }
-
-    @keyframes floatBg {
-      from { background-position: 0 0; }
-      to { background-position: 0 100%; }
-    }
-
-    /* เลเยอร์น้ำ */
-    .river {
-      position: absolute;
-      bottom: 0;
-      width: 100%;
-      height: 100px;
-      background: rgba(0, 0, 50, 0.6);
-      backdrop-filter: blur(3px);
-      box-shadow: inset 0 0 255px rgba(255, 255, 255, 0.1);
-      animation: shimmer 10s ease-in-out infinite;
-    }
-
-    @keyframes shimmer {
-      0%, 100% { opacity: 0.9; }
-      50% { opacity: 0.6; }
-    }
-
-    h1 {
-      text-align: center;
-      padding-top: 30px;
-      font-size: 2em;
-      color: #ffb6c1;
-      text-shadow: 0 0 10px #ffb6c1;
-    }
-
-    .form {
-      text-align: center;
-      margin-top: 50px;
-    }
-
-    input {
-      margin: 8px;
-      padding: 8px 15px;
-      border-radius: 10px;
-      border: none;
-      text-align: center;
-      font-size: 1em;
-    }
-
-    button {
-      margin-top: 15px;
-      padding: 10px 30px;
-      border-radius: 25px;
-      border: none;
-      background-color: #ffd700;
-      font-weight: bold;
-      font-size: 1em;
-      cursor: pointer;
-      transition: transform 0.2s;
-    }
-
-    button:hover {
-      transform: scale(1.05);
-      background-color: #fff5b5;
-    }
-
-    .krathong {
-      position: absolute;
-      width: 120px;
-      bottom: 150px;
-      animation: floatKrathong 30s linear infinite;
-    }
-
-    @keyframes floatKrathong {
-      0% { transform: translateX(-200px) translateY(0); }
-      50% { transform: translateX(100vw) translateY(-10px); }
-      100% { transform: translateX(-200px) translateY(0); }
-    }
-
-    .wish-text {
-      position: absolute;
-      bottom: 300px;
-      width: 100%;
-      text-align: center;
-      font-size: 1.3em;
-      color: #ffefaa;
-      text-shadow: 0 0 15px #fff59d;
-      opacity: 0;
-      animation: floatWish 6s ease-in-out infinite;
-    }
-
-    @keyframes floatWish {
-      0% { opacity: 0; transform: translateY(0); }
-      30% { opacity: 1; transform: translateY(-20px); }
-      70% { opacity: 1; transform: translateY(-50px); }
-      100% { opacity: 0; transform: translateY(-80px); }
-    }
-
-    .lantern {
-      position: absolute;
-      bottom: -50px;
-      font-size: 40px;
-      animation: flyLantern 15s linear infinite;
-      opacity: 0.8;
-    }
-
-    @keyframes flyLantern {
-      0% { transform: translateY(0) scale(1); opacity: 0.6; }
-      100% { transform: translateY(-110vh) scale(1.3); opacity: 1; }
-    }
-
-    iframe {
-      display: none;
-    }
-  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>freelovetoh | ฟรีลอยกระทงออนไลน์กับแฟน 💞</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="background"></div>
-
-  <h1>freelovetoh | ลอยกระทงออนไลน์กับแฟน 💞</h1>
-
-  <div class="form" id="form">
-    <input type="text" id="yourName" placeholder="ชื่อของคุณ" />
-    <input type="text" id="loverName" placeholder="ชื่อแฟนของคุณ 💞" />
-    <input type="text" id="wish" placeholder="คำอธิษฐาน 1 ข้อ 🕯️" /><br />
-    <button onclick="floatKrathong()">🌕ลอยกระทง🌕</button>
+  <!-- หน้าหลัก -->
+  <div id="page1" class="page active">
+    <h1 class="title">💞 freelovetoh | ฟรีลอยกระทงออนไลน์กับแฟน 💞</h1>
+    <div class="preview">
+      <img src="https://mthai.com/loykrathong/images/items/2025/krathong-1.png" alt="กระทงตัวอย่าง" class="krathong-preview">
+    </div>
+    <button id="floatButton" class="btn-float">กดลอยกระทง</button>
   </div>
 
-  <div class="river"></div>
+  <!-- หน้าลอยกระทง -->
+  <div id="page2" class="page">
+    <div class="river">
+      <img src="https://mthai.com/loykrathong/images/items/2025/krathong-1.png" class="krathong-floating" alt="กระทงกำลังลอย">
+    </div>
+    <p class="message">🌙 ขอให้ความรักของเราลอยไปกับแสงเทียนคืนนี้ 💫</p>
+  </div>
 
-  <iframe
-    src="https://www.youtube.com/embed/95s3Y8nVMV4?si=fuCx5HBKEmDlpBeF&autoplay=1&loop=1"
-    allow="autoplay"
-  ></iframe>
-
-  <script>
-    function floatKrathong() {
-      const yourName = document.getElementById("yourName").value;
-      const loverName = document.getElementById("loverName").value;
-      const wish = document.getElementById("wish").value;
-      document.getElementById("form").style.display = "none";
-
-      // กระทง
-      const krathong = document.createElement("img");
-      krathong.src = "https://mthai.com/loykrathong/images/items/2025/krathong-1.png";
-      krathong.className = "krathong";
-      document.body.appendChild(krathong);
-
-      // ข้อความอวยพร
-      const text = document.createElement("div");
-      text.className = "wish-text";
-      text.innerHTML = `<b>${yourName} 💞 ${loverName}</b><br>${wish || "ขอให้ความทุกข์เศร้าลอยไปกับสายน้ำแห่งความสุข 🌊"}`;
-      document.body.appendChild(text);
-
-      // โคมลอยหลายดวง
-      for (let i = 0; i < 10; i++) {
-        const lantern = document.createElement("div");
-        lantern.className = "lantern";
-        lantern.style.left = Math.random() * 100 + "vw";
-        lantern.style.animationDuration = 10 + Math.random() * 10 + "s";
-        lantern.textContent = "🫶🏮😘";
-        document.body.appendChild(lantern);
-      }
-    }
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
