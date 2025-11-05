@@ -1,122 +1,81 @@
 body {
   margin: 0;
-  font-family: 'Prompt', sans-serif;
+  padding: 0;
   background: url('https://png.pngtree.com/thumb_back/fh260/background/20250831/pngtree-loy-krathong-festival-in-thailand-with-traditional-lanterns-and-candle-lights-image_18692648.webp') no-repeat center center/cover;
-  overflow: hidden;
+  font-family: 'Prompt', sans-serif;
   height: 100vh;
+  overflow: hidden;
   color: white;
-  text-align: center;
 }
 
 .container {
-  position: absolute;
-  top: 15%;
-  width: 100%;
+  text-align: center;
+  padding-top: 5%;
+}
+
+h1 {
+  font-size: 2rem;
+  background: rgba(0,0,0,0.5);
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 20px;
 }
 
 .form-box {
-  margin-top: 20px;
+  background: rgba(0,0,0,0.6);
+  display: inline-block;
+  padding: 20px;
+  border-radius: 20px;
+  margin-top: 30px;
+}
+
+.krathong-img {
+  width: 200px;
+  margin-bottom: 15px;
 }
 
 input, textarea {
-  width: 60%;
-  max-width: 400px;
+  display: block;
+  width: 80%;
+  margin: 10px auto;
   padding: 10px;
   border-radius: 10px;
   border: none;
-  margin: 5px;
 }
 
 button {
-  margin-top: 10px;
-  padding: 10px 30px;
-  border: none;
-  background: #ff82b2;
+  background-color: #ff69b4;
   color: white;
+  padding: 10px 25px;
+  font-size: 1rem;
   border-radius: 25px;
-  cursor: pointer;
-  font-size: 18px;
-  transition: 0.3s;
-}
-button:hover {
-  background: #ff4c94;
-}
-
-.river {
-  position: relative;
-  height: 100vh;
-  width: 100%;
-  overflow: hidden;
-}
-
-.krathong {
-  position: absolute;
-  bottom: 0;
-  width: 120px;
-  transition: transform 20s linear, bottom 20s ease-in-out;
-}
-
-.hidden {
-  display: none;
-}
-body {
-  margin: 0;
-  font-family: "Prompt", sans-serif;
-  color: #fff;
-  background: linear-gradient(to bottom, #001d3d, #003566);
-  overflow: hidden;
-}
-
-.home {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  background: radial-gradient(circle at bottom, #013a63, #000814);
-  text-align: center;
-}
-
-.sample-area {
-  margin: 20px;
-}
-.sample-float {
-  width: 150px;
-  animation: gentleFlow 6s infinite ease-in-out alternate;
-}
-
-button {
-  background: #ffd60a;
   border: none;
-  padding: 12px 24px;
-  font-size: 1.1em;
-  border-radius: 25px;
   cursor: pointer;
-  color: #000;
   transition: 0.3s;
 }
+
 button:hover {
-  background: #ffc300;
+  background-color: #ff1493;
 }
 
-/* เอฟเฟกต์น้ำ */
-.float-page {
-  background: linear-gradient(to top, #03045e, #023e8a);
+/* เอฟเฟกต์หน้าแม่น้ำ */
+.river-scene {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background: url('https://png.pngtree.com/thumb_back/fh260/background/20250831/pngtree-loy-krathong-festival-in-thailand-with-traditional-lanterns-and-candle-lights-image_18692648.webp') no-repeat center center/cover;
 }
 
-.floating-krathongs img {
+.floating-krathong {
   position: absolute;
-  width: 120px;
-  animation: flowAcross 60s linear infinite;
+  width: 150px;
+  bottom: -200px;
+  animation: floatUp 25s linear forwards;
 }
 
-@keyframes gentleFlow {
-  from { transform: translateY(0px); }
-  to { transform: translateY(-10px); }
-}
-
-@keyframes flowAcross {
-  from { transform: translateX(-150px); opacity: 0; }
-  10% { opacity: 1; }
-  to { transform: translateX(100vw); opacity: 0.8; }
+@keyframes floatUp {
+  0% { bottom: -200px; opacity: 0; transform: translateX(0px) scale(0.9); }
+  30% { opacity: 1; }
+  100% { bottom: 120%; opacity: 0.8; transform: translateX(50px) scale(1); }
 }
