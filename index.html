@@ -1,74 +1,54 @@
-<!DOCTYPE html>
-<html lang="th">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>freelovetoh | ลอยกระทงออนไลน์กับแฟน 💞</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <div id="scene">
-    <div id="moon"></div>
-    <div id="stars"></div>
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
-    <div id="welcome" class="overlay">
-      <div class="card">
-        <h1>ที่รักคะ เรามาลอยกระทงกันเถอะ</h1>
-        <p>กดเข้าร่วมเพื่อเริ่มเพลงและสร้างกระทงของเรา</p>
-        <button id="enterBtn" class="btn">เข้าร่วมและเริ่มเพลง</button>
-      </div>
+export default function LoyKrathongApp() {
+  const [page, setPage] = useState("home");
+
+  const bgImage =
+    "https://png.pngtree.com/thumb_back/fh260/background/20250831/pngtree-loy-krathong-festival-in-thailand-with-traditional-lanterns-and-candle-lights-image_18692648.webp";
+
+  return (
+    <div
+      className="min-h-screen bg-cover bg-center flex items-center justify-center"
+      style={{ backgroundImage: `url(${bgImage})` }}
+    >
+      <AnimatePresence mode="wait">
+        {page === "home" ? (
+          <motion.div
+            key="home"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="text-center text-white"
+          >
+            <h1 className="text-5xl font-bold mb-6 drop-shadow-lg">
+              🌕 เทศกาลลอยกระทง 🌕
+            </h1>
+            <motion.button
+              onClick={() => setPage("second")}
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              className="px-8 py-4 bg-yellow-400 text-black font-bold rounded-full shadow-lg"
+            >
+              ลอยกระทง
+            </motion.button>
+          </motion.div>
+        ) : (
+          <motion.div
+            key="second"
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-center text-white"
+          >
+            <h1 className="text-5xl font-bold mb-6 drop-shadow-lg">
+              🪷 สุขสันต์วันลอยกระทง 🪷
+            </h1>
+            <p className="text-xl">ขอให้สิ่งไม่ดีลอยไปกับกระทงนะครับ ✨</p>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
-
-    <div id="controls" class="panel">
-      <label>เลือกรูปกระทง (ตัวอย่างเดียว)</label>
-      <div class="thumbs">
-        <img id="templateImg" src="https://pngbie.com/assets/images/icon/Pngbie-%E0%B8%A0%E0%B8%B2%E0%B8%9E%E0%B8%9F%E0%B8%A3%E0%B8%B5-20221030022923.png" alt="krathong template">
-      </div>
-
-      <label>หมุน (องศา)</label>
-      <input id="rotate" type="range" min="0" max="360" value="0">
-
-      <label>ขยาย (%)</label>
-      <input id="scale" type="range" min="50" max="200" value="100">
-
-      <label>ชื่อผู้ลอย</label>
-      <input id="myName" type="text" placeholder="ชื่อของคุณ">
-
-      <label>ชื่อคนรัก</label>
-      <input id="loverName" type="text" placeholder="ชื่อคนรัก">
-
-      <label>คำอวยพร (1)</label>
-      <input id="wish1" type="text" placeholder="ขอให้...">
-
-      <label>คำอวยพร (2)</label>
-      <input id="wish2" type="text" placeholder="(ไม่บังคับ)">
-
-      <label>คำอวยพร (3)</label>
-      <input id="wish3" type="text" placeholder="(ไม่บังคับ)">
-
-      <div class="row">
-        <button id="previewBtn" class="btn">ดูตัวอย่าง</button>
-        <button id="releaseBtn" class="btn primary">💖 ลอยกระทง</button>
-      </div>
-      <p class="note">เมื่อกดลอย กระทงจะถูกเก็บในระบบและผู้ใช้อื่นจะเห็นแบบเรียลไทม์</p>
-    </div>
-
-    <div id="river">
-      <div id="pond"></div>
-    </div>
-
-    <!-- iframe YouTube (จะเพิ่ม autoplay เมื่อผู้กด enter) -->
-    <div id="ytWrap" style="display:none">
-      <iframe id="ytFrame" width="0" height="0" style="display:none"
-        src="https://www.youtube.com/embed/95s3Y8nVMV4?enablejsapi=1&rel=0"
-        frameborder="0" allow="autoplay; encrypted-media"></iframe>
-    </div>
-  </div>
-
-  <!-- Firebase compat SDK -->
-  <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-app-compat.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-database-compat.js"></script>
-
-  <script src="script.js"></script>
-</body>
-</html>
+  );
+}
