@@ -1,105 +1,122 @@
 body {
   margin: 0;
-  padding: 0;
-  background: url('https://png.pngtree.com/thumb_back/fh260/background/20250831/pngtree-loy-krathong-festival-in-thailand-with-traditional-lanterns-and-candle-lights-image_18692648.webp') no-repeat center center/cover;
-  height: 100vh;
-  overflow: hidden;
   font-family: 'Prompt', sans-serif;
-}
-
-.page {
-  display: none;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+  background: url('https://png.pngtree.com/thumb_back/fh260/background/20250831/pngtree-loy-krathong-festival-in-thailand-with-traditional-lanterns-and-candle-lights-image_18692648.webp') no-repeat center center/cover;
+  overflow: hidden;
   height: 100vh;
-  text-align: center;
-  transition: opacity 1s;
-}
-
-.page.active {
-  display: flex;
-}
-
-.title {
-  color: #ff0000;
-  font-size: 2em;
-  margin-bottom: 20px;
-  text-shadow: 2px 2px 8px #000;
-}
-
-.krathong-preview {
-  width: 150px;
-  animation: floatUpDown 3s ease-in-out infinite;
-}
-
-@keyframes floatUpDown {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
-}
-
-.btn-float {
-  margin-top: 25px;
-  padding: 12px 25px;
-  font-size: 1.2em;
-  border: none;
-  border-radius: 25px;
-  background: linear-gradient(90deg, #ff5f6d, #ffc371);
   color: white;
-  cursor: pointer;
-  box-shadow: 0 0 15px rgba(255, 120, 120, 0.8);
-  transition: transform 0.3s;
+  text-align: center;
 }
 
-.btn-float:hover {
-  transform: scale(1.1);
+.container {
+  position: absolute;
+  top: 15%;
+  width: 100%;
+}
+
+.form-box {
+  margin-top: 20px;
+}
+
+input, textarea {
+  width: 60%;
+  max-width: 400px;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  margin: 5px;
+}
+
+button {
+  margin-top: 10px;
+  padding: 10px 30px;
+  border: none;
+  background: #ff82b2;
+  color: white;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 18px;
+  transition: 0.3s;
+}
+button:hover {
+  background: #ff4c94;
 }
 
 .river {
   position: relative;
+  height: 100vh;
   width: 100%;
-  height: 100%;
   overflow: hidden;
 }
 
-.krathong-floating {
+.krathong {
   position: absolute;
-  bottom: 50px;
-  left: -200px;
-  width: 250px; /* กระทงใหญ่ขึ้นในหน้าลอย */
-  animation: romanticFlow 25s linear infinite;
+  bottom: 0;
+  width: 120px;
+  transition: transform 20s linear, bottom 20s ease-in-out;
 }
 
-@keyframes romanticFlow {
-  0% {
-    transform: translateX(0) translateY(0);
-  }
-  25% {
-    transform: translateX(30vw) translateY(-5px);
-  }
-  50% {
-    transform: translateX(60vw) translateY(8px);
-  }
-  75% {
-    transform: translateX(85vw) translateY(-3px);
-  }
-  100% {
-    transform: translateX(100vw) translateY(0);
-  }
+.hidden {
+  display: none;
+}
+body {
+  margin: 0;
+  font-family: "Prompt", sans-serif;
+  color: #fff;
+  background: linear-gradient(to bottom, #001d3d, #003566);
+  overflow: hidden;
 }
 
-.message {
-  position: absolute;
-  bottom: 20px;
-  width: 100%;
+.home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: radial-gradient(circle at bottom, #013a63, #000814);
   text-align: center;
-  font-size: 1.4em;
-  color: white;
-  text-shadow: 2px 2px 8px black;
-  animation: fadeIn 3s ease-in-out;
 }
 
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+.sample-area {
+  margin: 20px;
+}
+.sample-float {
+  width: 150px;
+  animation: gentleFlow 6s infinite ease-in-out alternate;
+}
+
+button {
+  background: #ffd60a;
+  border: none;
+  padding: 12px 24px;
+  font-size: 1.1em;
+  border-radius: 25px;
+  cursor: pointer;
+  color: #000;
+  transition: 0.3s;
+}
+button:hover {
+  background: #ffc300;
+}
+
+/* เอฟเฟกต์น้ำ */
+.float-page {
+  background: linear-gradient(to top, #03045e, #023e8a);
+}
+
+.floating-krathongs img {
+  position: absolute;
+  width: 120px;
+  animation: flowAcross 60s linear infinite;
+}
+
+@keyframes gentleFlow {
+  from { transform: translateY(0px); }
+  to { transform: translateY(-10px); }
+}
+
+@keyframes flowAcross {
+  from { transform: translateX(-150px); opacity: 0; }
+  10% { opacity: 1; }
+  to { transform: translateX(100vw); opacity: 0.8; }
 }
