@@ -1,0 +1,51 @@
+/* style.css */
+:root{
+  --water1:#001d3d; --water2:#003566; --accent:#ffd60a;
+}
+*{box-sizing:border-box}
+body,html{height:100%;margin:0;font-family:Prompt,system-ui,-apple-system,Segoe UI,Roboto,"Noto Sans Thai",sans-serif;color:#fff;background:linear-gradient(to top,var(--water1),var(--water2))}
+#scene{position:relative;height:100vh;overflow:hidden}
+
+/* moon & stars */
+#moon{position:absolute;left:50%;top:6%;transform:translateX(-50%);width:320px;height:320px;border-radius:50%;
+  background:radial-gradient(circle at 35% 30%, #fff, #f5f2d0 40%, rgba(255,255,255,0.05) 60%);box-shadow:0 0 60px rgba(255,240,180,0.25);z-index:2}
+#stars{position:absolute;inset:0;z-index:0;pointer-events:none}
+
+/* welcome overlay */
+.overlay{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;z-index:8}
+.card{background:rgba(0,0,0,0.45);padding:22px;border-radius:14px;text-align:center;backdrop-filter:blur(4px)}
+.card h1{color:var(--accent);margin:0 0 8px}
+.btn{background:var(--accent);color:#001;border:none;padding:10px 16px;border-radius:12px;font-weight:700;cursor:pointer}
+.btn.primary{background:#ff8c42}
+
+/* controls panel */
+.panel{position:absolute;left:18px;top:18px;width:300px;z-index:7;background:rgba(0,0,0,0.35);padding:12px;border-radius:12px}
+.panel label{display:block;margin:8px 0 6px;font-size:13px;color:#e6f7ff}
+.panel input[type="text"], .panel input[type="range"]{width:100%;padding:6px;border-radius:8px;border:1px solid rgba(255,255,255,0.07);background:rgba(255,255,255,0.02);color:#fff}
+.thumbs img{width:80px;height:80px;border-radius:10px;border:1px solid rgba(255,255,255,0.06);object-fit:cover}
+
+/* river & pond */
+#river{position:absolute;left:50%;transform:translateX(-50%);bottom:0;width:95%;max-width:980px;height:55vh;border-radius:28px;background:linear-gradient(180deg,#023e56,#01293c);z-index:1;overflow:hidden;border:1px solid rgba(255,255,255,0.04)}
+#pond{position:relative;height:100%;width:100%}
+
+/* krathong style */
+.krathong{position:absolute;bottom:-150px; /* start off-screen */ left:50%; transform:translateX(-50%); transition:bottom 4s cubic-bezier(.2,.8,.2,1), transform 2s; z-index:5; pointer-events:auto}
+.krathong img{width:120px;height:auto;display:block;transform-origin:center center}
+.krathong .label{position:absolute;left:50%;transform:translateX(-50%);bottom:-30px;background:rgba(0,0,0,0.45);padding:4px 8px;border-radius:8px;font-size:13px;color:#fff}
+.krathong .wish{position:absolute;left:50%;transform:translateX(-50%);bottom:84px;background:rgba(0,0,0,0.55);padding:6px 10px;border-radius:10px;font-size:13px}
+
+/* hand (small) */
+.hand{position:absolute;right:12%;bottom:60px;width:160px;z-index:9;opacity:0;transition:transform 0.9s,opacity 0.6s}
+
+/* sparkle lights (floating) */
+.sparkle{position:absolute;inset:0;pointer-events:none;z-index:3}
+.sparkle .dot{position:absolute;width:6px;height:6px;border-radius:50%;background:rgba(255,230,160,0.95);box-shadow:0 0 8px rgba(255,230,160,0.9);opacity:0.9; animation:float 2.5s linear infinite}
+@keyframes float{0%{transform:translateY(0) scale(.7)}50%{transform:translateY(-10px) scale(1)}100%{transform:translateY(-20px) scale(.6);opacity:0}}
+
+.note{font-size:12px;color:#cfefff;margin-top:8px}
+
+/* responsive */
+@media(max-width:720px){
+  .panel{left:8px;right:8px;width:auto}
+  .krathong img{width:90px}
+}
